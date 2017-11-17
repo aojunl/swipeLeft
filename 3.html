@@ -14,6 +14,7 @@
 		<div>2</div>
 		<div>3</div>
 		<div>4</div>
+		<div><button id='but'>百度</button></div>
 		</div>
 		
 		<script>
@@ -37,7 +38,9 @@
 				}
 				$("#box").css("transform","translate3d(-"+i*innerWidth+"px,0,0)");
 			})
-			
+			$('#but').on('tap',function(){
+			location.href='http://baidu.com';
+			})
 			
 		</script>
 		
