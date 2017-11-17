@@ -18,8 +18,11 @@
 		
 		<script>
 			var i=0
+			var box=document.getElementById("box")
+			box.addEventListener("touchstart",function(ev){
+				ev.preventDefault()
+			})
 			$("#box").on("swipeLeft",function(){
-                                ev.preventDefault();
 				i++;
 				if(i==$("#box div").length){
 					i=$("#box div").length-1;
@@ -28,7 +31,6 @@
 			})
 			
 			$("#box").on("swipeRight",function(){
-                               ev.preventDefault();
 				i--;
 				if(i<0){
 					i=0;
