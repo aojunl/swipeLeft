@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1.0" />
+		<title></title>
+		<style type="text/css">
+			#box{
+				width: 100px;
+				height: 100px;
+				background: gray;
+				position: relative;
+			}
+		</style>
+	</head>
+	<body>
+		
+		
+	  <a href="http://baidu.com">点击</a>
+		<div id="box">
+			dd
+		</div>
+	</body>
+	<script type="text/javascript">
+		var odiv=document.getElementById("box")
+		odiv.addEventListener("touchstart",function(ev){
+			ev.preventDefault();
+			this.innerHTML=ev.targetTouches.length;
+			
+		})
+		odiv.addEventListener("touchmove",function(ev){
+			ev.preventDefault()
+			this.innerHTML=ev.targetTouches.length;
+		})
+		odiv.addEventListener("touchend",function(ev){
+			ev.preventDefault()
+			this.innerHTML=ev.targetTouches.length;
+		})
+	</script>
+</html>

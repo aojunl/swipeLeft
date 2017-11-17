@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no"/>
+		<link rel="stylesheet" href="x.css" />
+	</head>
+	<body>
+		<div class="box" id="box">
+		<div>1</div>
+		<div>2</div>
+		<div>3</div>
+		<div>4</div>
+		</div>
+		
+		<script>
+			
+			var oDiv=document.getElementById("box")
+			var divs=oDiv.getElementsByTagName("div")
+			var w=innerWidth;
+			oDiv.addEventListener("touchstart",function(ev){
+			ev.preventDefault();
+			var posLeft=this.offsetLeft;
+			var ex=ev.changedTouches[0].pageX;
+			console.log(ex);
+			oDiv.addEventListener('touchmove',function(ev){
+				var dis=ev.changedTouches[0].pageX-ex;
+				oDiv.style.left=(posLeft+dis)+"px";
+				
+				})
+			oDiv.addEventListener("touchend",function(ev){
+				var n=Math.round(oDiv.offsetLeft/w);
+				if(n<=-(divs.length-1)){
+					n=-(divs.length-1)
+				}
+				if(n>0){
+					n=0;
+				}
+				oDiv.style.left=n*w+"px"
+			})
+			
+			
+			})
+			
+			
+			
+		</script>
+		
+	</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no"/>
+		<link rel="stylesheet" href="x.css" />
+		<script type="text/javascript" src="zcpto.js" ></script>
+		<script type="text/javascript" src="touch.js" ></script>
+	</head>
+	<body>
+		<div class="box" id="box">
+		<div>1</div>
+		<div>2</div>
+		<div>3</div>
+		<div>4</div>
+		</div>
+		
+		<script>
+			var i=0
+			$("#box").on("swipeLeft",function(){
+				i++;
+				if(i==$("#box div").length){
+					i=$("#box div").length-1;
+				}
+				$("#box").css("transform","translate3d(-"+i*innerWidth+"px,0,0)");
+			})
+			
+			$("#box").on("swipeRight",function(){
+				i--;
+				if(i<0){
+					i=0;
+				}
+				$("#box").css("transform","translate3d(-"+i*innerWidth+"px,0,0)");
+			})
+			
+			
+		</script>
+		
+	</body>
+</html>

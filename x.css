@@ -1,0 +1,10 @@
+html { width: 100%; height: 100%; }
+html body { margin: 0; width: 100%; height: 300px; position: relative; overflow: hidden; }
+html body .box { width: 400%; height: 300px; position: absolute; }
+html body .box div { width: 25%; height: 300px; float: left; }
+html body .box div:nth-child(1) { background: blue; }
+html body .box div:nth-child(2) { background: red; }
+html body .box div:nth-child(3) { background: gold; }
+html body .box div:nth-child(4) { background: green; }
+
+/*# sourceMappingURL=x.css.map */
